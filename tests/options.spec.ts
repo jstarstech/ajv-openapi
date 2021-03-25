@@ -1,11 +1,11 @@
-import * as Ajv from "ajv";
+import Ajv from "ajv";
 import * as openapi from "../";
 import { createAjv } from "./helpers";
 
 describe("float", () => {
 
-    describe(".useDraft04", () => {
-        let ajv: Ajv.Ajv;
+    describe(".useDraft06", () => {
+        let ajv: Ajv;
         let spy: jest.SpyInstance;
         beforeEach(() => {
             ajv = createAjv(false);
@@ -15,19 +15,19 @@ describe("float", () => {
             spy.mockRestore();
         });
 
-        it("should add draft04 to ajv metaschemas by default", () => {
+        it("should add draft06 to ajv metaschemas by default", () => {
             openapi(ajv);
 
             expect(spy).toBeCalledTimes(1);
             expect(spy).toBeCalledWith(
                 expect.objectContaining({
-                    $schema: "http://json-schema.org/draft-04/schema#"
+                    $schema: "http://json-schema.org/draft-06/schema#"
                 })
             );
         });
 
-        it("should not add draft04 to ajv metaschemas if useDraft04 = false", () => {
-            openapi(ajv, { useDraft04: false });
+        it("should not add draft06 to ajv metaschemas if useDraft04 = false", () => {
+            openapi(ajv, { useDraft06: false });
 
             expect(spy).not.toBeCalled();
         });

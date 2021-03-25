@@ -7,6 +7,8 @@
 [![Test Coverage](https://coveralls.io/repos/github/touchifyapp/ajv-openapi/badge.svg)](https://coveralls.io/github/touchifyapp/ajv-openapi)
 [![Dependency Status](https://img.shields.io/david/touchifyapp/ajv-openapi.svg)](https://david-dm.org/touchifyapp/ajv-openapi)
 
+This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyapp/ajv-openapi) to add support of Ajv v7
+
 [Ajv](https://github.com/epoberezkin/ajv) plugin that adds Open API v3 [data types](http://swagger.io/specification/#dataTypeFormat) (formats: int32, int64, float, double, byte) validation.
 
 ## Installation 
@@ -43,7 +45,7 @@ const ajvOptions = {
 };
 
 const openApiOptions = {
-    useDraft04: true
+    useDraft06: true
 };
 
 const ajv = openApi(
