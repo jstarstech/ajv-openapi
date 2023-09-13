@@ -1,11 +1,8 @@
 # ajv-openapi
 
 [![License](http://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
-[![NPM version](https://img.shields.io/npm/v/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
-[![NPM download](https://img.shields.io/npm/dm/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
-[![Build Status](https://travis-ci.org/touchifyapp/ajv-openapi.svg?branch=master)](https://travis-ci.org/touchifyapp/ajv-openapi)
-[![Test Coverage](https://coveralls.io/repos/github/touchifyapp/ajv-openapi/badge.svg)](https://coveralls.io/github/touchifyapp/ajv-openapi)
-[![Dependency Status](https://img.shields.io/david/touchifyapp/ajv-openapi.svg)](https://david-dm.org/touchifyapp/ajv-openapi)
+[![NPM version](https://img.shields.io/npm/v/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
+[![NPM download](https://img.shields.io/npm/dm/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
 
 This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyapp/ajv-openapi) to add support of Ajv v7
 
@@ -14,14 +11,14 @@ This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyap
 ## Installation 
 
 ```bash
-npm install ajv ajv-openapi
+npm install ajv @jstarstech/ajv-openapi
 ```
 
 ## Usage
 
 ```javascript
 const Ajv = require("ajv");
-const openApi = require("ajv-openapi");
+const openApi = require("@jstarstech/ajv-openapi");
 
 const ajv = openApi(new Ajv());
 ```
@@ -33,7 +30,7 @@ To configure Ajv to be fully Open API v3 compliant, you should configure the plu
 
 ```javascript
 const Ajv = require("ajv");
-const openApi = require("ajv-openapi");
+const openApi = require("@jstarstech/ajv-openapi");
 
 const ajvOptions = {
     schemaId: "auto",
