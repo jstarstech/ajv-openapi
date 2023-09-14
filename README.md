@@ -1,8 +1,8 @@
 # ajv-openapi
 
 [![License](http://img.shields.io/badge/license-MIT-green.svg)](http://opensource.org/licenses/MIT)
-[![NPM version](https://img.shields.io/npm/v/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
-[![NPM download](https://img.shields.io/npm/dm/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/ajv-openapi)
+[![NPM version](https://img.shields.io/npm/v/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/@jstarstech/ajv-openapi)
+[![NPM download](https://img.shields.io/npm/dm/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/@jstarstech/ajv-openapi)
 
 This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyapp/ajv-openapi) to add support of Ajv v7
 
