@@ -2,7 +2,7 @@ import Ajv from "ajv";
 import * as openapi from "../";
 import { createAjv } from "./helpers";
 
-describe("float", () => {
+describe("options", () => {
 
     describe(".useDraft06", () => {
         let ajv: Ajv;
@@ -26,7 +26,16 @@ describe("float", () => {
             );
         });
 
-        it("should not add draft06 to ajv metaschemas if useDraft04 = false", () => {
+        it("should not add draft06 twice for the same ajv instance", () => {
+            expect(() => {
+                openapi(ajv);
+                openapi(ajv);
+            }).not.toThrow();
+
+            expect(spy).toHaveBeenCalledTimes(1);
+        });
+
+        it("should not add draft06 to ajv metaschemas if useDraft06 = false", () => {
             openapi(ajv, { useDraft06: false });
 
             expect(spy).not.toHaveBeenCalled();

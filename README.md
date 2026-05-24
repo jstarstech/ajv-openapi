@@ -4,9 +4,9 @@
 [![NPM version](https://img.shields.io/npm/v/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/@jstarstech/ajv-openapi)
 [![NPM download](https://img.shields.io/npm/dm/@jstarstech/ajv-openapi.svg?style=flat-square)](https://npmjs.org/package/@jstarstech/ajv-openapi)
 
-This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyapp/ajv-openapi) to add support of Ajv v7
+This package forked from [touchifyapp/ajv-openapi](https://github.com/touchifyapp/ajv-openapi) to add support of Ajv v8
 
-[Ajv](https://github.com/epoberezkin/ajv) plugin that adds Open API v3 [data types](http://swagger.io/specification/#dataTypeFormat) (formats: int32, int64, float, double, byte) validation.
+[Ajv](https://github.com/epoberezkin/ajv) plugin that adds OpenAPI v3 [data types](http://swagger.io/specification/#dataTypeFormat) (formats: int32, int64, float, double, byte) validation.
 
 ## Installation 
 
@@ -26,19 +26,16 @@ const ajv = openApi(new Ajv());
 ## Configuration for full OpenAPI compatibility
 
 By default, the plugin only adds missing formats to Ajv validator.
-To configure Ajv to be fully Open API v3 compliant, you should configure the plugin like this:
+If you want type coercion, set `coerceTypes: true` on your Ajv instance explicitly.
+To configure Ajv to be fully OpenAPI v3 compliant, you should configure the plugin like this:
 
 ```javascript
 const Ajv = require("ajv");
 const openApi = require("@jstarstech/ajv-openapi");
 
 const ajvOptions = {
-    schemaId: "auto",
-    format: "full",
     coerceTypes: true,
-    unknownFormats: "ignore",
-    useDefaults: true,
-    nullable: true
+    useDefaults: true
 };
 
 const openApiOptions = {
@@ -77,7 +74,7 @@ console.log(ajv.compile({ type: "number", format: "float" })(Number.MIN_VALUE));
 console.log(ajv.compile({ type: "number", format: "float" })(1.23));
 console.log(ajv.compile({ type: "number", format: "float" })(123));
 > false
-> false
+> true
 > true
 > true
 

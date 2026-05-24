@@ -6,14 +6,14 @@ describe("double", () => {
         const ajv = createAjv();
         const validator = ajv.compile({ type: "number", format: "double" });
 
-        expect(validator("3.4E+39")).toBe(true);
+        expect(validator(3.4e39)).toBe(true);
         expect(validator(-9234234)).toBe(true);
         expect(validator(0)).toBe(true);
         expect(validator(1)).toBe(true);
         expect(validator(1.0)).toBe(true);
         expect(validator(999)).toBe(true);
         expect(validator(912312399)).toBe(true);
-        expect(validator("-3.4E+39")).toBe(true);
+        expect(validator(-3.4e39)).toBe(true);
     });
 
     it("should be false if value is a double and is out-of-range", () => {

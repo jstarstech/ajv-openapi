@@ -12,7 +12,8 @@ import {
 export = ajvOpenApi;
 
 function ajvOpenApi(ajv: Ajv, options?: ajvOpenApi.AjvOpenApiOptions): Ajv {
-    if (options?.useDraft06 !== false) {
+    if (options?.useDraft06 !== false &&
+        !ajv.getSchema("http://json-schema.org/draft-06/schema")) {
         ajv.addMetaSchema(require("ajv/lib/refs/json-schema-draft-06.json"));
     }
 
@@ -32,7 +33,6 @@ namespace ajvOpenApi {
 
     export function createOptions(options?: AjvOptions): AjvOptions {
         return {
-            coerceTypes: true,
             useDefaults: true,
             ...options
         };

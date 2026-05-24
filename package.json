@@ -1,7 +1,7 @@
 {
   "name": "@jstarstech/ajv-openapi",
   "version": "3.0.3",
-  "description": "Ajv plugin to add Open API v3 data type formats support",
+  "description": "Ajv plugin to add OpenAPI v3 data type formats support",
   "author": "Touchify <dev@touchify.co>",
   "license": "MIT",
   "main": "index.js",
@@ -24,7 +24,7 @@
     "test:coverage": "npm run test -- -- --coverage",
     "test:ci": "npm run test:coverage -- --ci",
     "lint": "npm run lint:ts",
-    "lint:ts": "eslint --ext .ts *.ts lib/**/*.ts",
+    "lint:ts": "eslint --ext .ts *.ts lib/**/*.ts tests/**/*.ts",
     "clean": "npm run clean:ts",
     "clean:ts": "rimraf --glob index.js index.d.ts \"lib/**/*.js\" \"lib/**/*.d.ts\"",
     "preversion": "npm run lint",

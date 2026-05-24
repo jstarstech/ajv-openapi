@@ -6,6 +6,7 @@ describe("byte", () => {
         const ajv = createAjv();
         const validator = ajv.compile({ type: "string", format: "byte" });
 
+        expect(validator("")).toBe(true);
         expect(validator("5L2g5aW95ZWK")).toBe(true);
         expect(validator("MTIz")).toBe(true);
         expect(validator("QCPvv6VAI++/pQ==")).toBe(true);

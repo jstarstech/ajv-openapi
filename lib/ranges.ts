@@ -16,11 +16,11 @@ export const INT64_RANGE = {
 };
 
 export const FLOAT_RANGE = {
-    min: new Decimal(2).pow(128).negated(),
-    max: new Decimal(2).pow(128),
+    min: new Decimal("3.4028234663852886e+38").negated(),
+    max: new Decimal("3.4028234663852886e+38"),
 };
 
 export const DOUBLE_RANGE = {
-    min: new Decimal(2).pow(1024).negated(),
-    max: new Decimal(2).pow(1024)
+    min: new Decimal("1.7976931348623157e+308").negated(),
+    max: new Decimal("1.7976931348623157e+308")
 };
