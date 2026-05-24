@@ -1,6 +1,6 @@
 {
   "name": "@jstarstech/ajv-openapi",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Ajv plugin to add OpenAPI v3 data type formats support",
   "author": "Touchify <dev@touchify.co>",
   "license": "MIT",
