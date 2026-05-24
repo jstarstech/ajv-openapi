@@ -18,8 +18,8 @@ describe("float", () => {
         it("should add draft06 to ajv metaschemas by default", () => {
             openapi(ajv);
 
-            expect(spy).toBeCalledTimes(1);
-            expect(spy).toBeCalledWith(
+            expect(spy).toHaveBeenCalledTimes(1);
+            expect(spy).toHaveBeenCalledWith(
                 expect.objectContaining({
                     $schema: "http://json-schema.org/draft-06/schema#"
                 })
@@ -29,7 +29,7 @@ describe("float", () => {
         it("should not add draft06 to ajv metaschemas if useDraft04 = false", () => {
             openapi(ajv, { useDraft06: false });
 
-            expect(spy).not.toBeCalled();
+            expect(spy).not.toHaveBeenCalled();
         });
 
     });
